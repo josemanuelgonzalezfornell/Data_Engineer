@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from pydantic import BaseModel
-import joblib
+import joblib #sirve para guardar o cargar modelos
 
 # 2. Clase que describe las medidas de una única flor
 class IrisSpecies(BaseModel):
