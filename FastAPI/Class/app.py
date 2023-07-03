@@ -2,7 +2,7 @@
 
 import uvicorn
 from fastapi import FastAPI
-from Model import IrisModel, IrisSpecies
+from model import IrisModel, IrisSpecies
 
 # 2. Crear la aplicación y los objetos del modelo
 
