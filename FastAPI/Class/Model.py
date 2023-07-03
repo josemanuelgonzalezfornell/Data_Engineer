@@ -38,6 +38,6 @@ class IrisModel:
     # 5. Realiza una predicción utilizando el modelo entrenado
     def predict_species(self, sepal_length, sepal_width, petal_length, petal_width):
         data_in = [[sepal_length, sepal_width, petal_length, petal_width]]
-        prediction_proba = self. model.predict_proba(data_in)
-        prediction = self.model.predict(data_in)
+        prediction_proba = self.model.predict_proba(data_in).tolist()
+        prediction = self.model.predict(data_in).tolist()
         return prediction, prediction_proba
