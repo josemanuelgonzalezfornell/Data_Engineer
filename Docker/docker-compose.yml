@@ -1,0 +1,25 @@
+# Version del docker compose
+version: "3.9"
+
+# Define el conjunto de servicios que se ejecutara
+services:
+#aqui se crea un iris app
+  iris_app:
+  #construye la imagen
+    build: .
+  # expone el puerto
+    ports:
+      - "8080:8080"
+
+  mongo: 
+    image: mongo
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - "27017:27017"
+
+
+
+# Te crea la imagen y un contenedor con muchos contenedores
