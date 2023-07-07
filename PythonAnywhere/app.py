@@ -1,11 +1,19 @@
-from flask import Flask
+from flask import Flask, request, jsonify
+import pickle
+import numpy as np
 
 app = Flask(__name__)
-app.config["DEBUG"] = True
 
-@app.route('/', methods=['GET'])
-def home():
-    return "<h1>Mamá mi primera aplicación</h1><p>This site is a prototype API for distant reading of science fiction novels.</p>"
+# Cargamos el modelo
+with open('model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    prediction = model.predict(np.array(data['example']).reshape(1, -1))
+    return jsonify({'prediction': int(prediction[0])})
 
-app.run()
+if __name__ == '__main__':
+    app.run()
+
