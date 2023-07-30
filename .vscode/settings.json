@@ -1,13 +1,8 @@
 {
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.autopep8"
-    },
-    "python.formatting.provider": "none",
-    "azureFunctions.deploySubpath": "Azure/AzFunction",
+    "azureFunctions.deploySubpath": "Azure\\AzFunction",
     "azureFunctions.scmDoBuildDuringDeployment": true,
     "azureFunctions.pythonVenv": ".venv",
     "azureFunctions.projectLanguage": "Python",
     "azureFunctions.projectRuntime": "~4",
-    "debug.internalConsoleOptions": "neverOpen",
-    "azureFunctions.projectSubpath": "Azure/AzFunction"
+    "debug.internalConsoleOptions": "neverOpen"
 }
